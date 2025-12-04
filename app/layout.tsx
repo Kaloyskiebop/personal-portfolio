@@ -38,6 +38,11 @@ const spaceMono = localFont({
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "Built with Next.js and Tailwind",
+  icons: {
+    icon: "/code.png",
+    shortcut: "/code.png",
+    apple: "/code.png"
+  },
 };
 
 export default function RootLayout({
