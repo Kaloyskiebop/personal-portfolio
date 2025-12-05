@@ -36,12 +36,12 @@ const spaceMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Built with Next.js and Tailwind",
+  title: "Reviz Portfolio",
+  description: "All Prompt No Cap",
   icons: {
-    icon: "/code.png",
-    shortcut: "/code.png",
-    apple: "/code.png"
+    icon: "/dev.png",
+    shortcut: "/dev.png",
+    apple: "/dev.png"
   },
 };
 
