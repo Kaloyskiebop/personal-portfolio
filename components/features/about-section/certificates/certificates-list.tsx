@@ -20,11 +20,19 @@ export default function CertificatesList() {
       link: "#"
     },
     {
-      title: "UI/UX Fundamentals",
+      title: "Information Management",
+      issuer: "Codechum",
+      date: "2025",
+      image: "/certificates/codechum-cert.png", 
+      description: "Covers organizing, storing, and retrieving information and data.",
+      link: "#"
+    },
+    {
+      title: "Gemini Certified Student",
       issuer: "Google",
-      date: "2023",
-      image: "/hero-banner.svg", 
-      description: "User research, wireframing, and prototyping in Figma.",
+      date: "2025",
+      image: "/certificates/gemini-certificate.jpg", 
+      description: "Successfully demonstrated the knowledge, skills, and basic competencies required to effectively use Google AI tools.",
       link: "#"
     },
   ];

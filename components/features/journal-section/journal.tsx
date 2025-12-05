@@ -60,7 +60,7 @@ export default function Journal() {
           src="/hero-banner.svg" 
           alt="Hero Banner"
           fill
-          className="object-cover opacity-20" 
+          className="object-cover" 
           priority
           quality={100}
         />
