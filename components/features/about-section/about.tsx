@@ -1,125 +1,197 @@
 "use client";
 
-import { useState } from "react";
-import { Code, Layers, ArrowUpRight, Award, Github, Instagram, Facebook } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Code, Layers, ArrowUpRight, Award, Github, Instagram, Facebook, Radio, Cpu, ScanLine } from "lucide-react";
 import Image from "next/image";
 import Modal from "@/components/ui/modal/about-modal-content"; 
 import CertificatesList from "./certificates/certificates-list"; 
 import TechStackList from "./tech-stack/tech-stack-list"; 
 
+// --- HELPER: LIVE CLOCK COMPONENT ---
+function LiveClock() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: "Asia/Manila",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      };
+      setTime(new Intl.DateTimeFormat("en-US", options).format(now));
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return <span className="font-mono tracking-widest">{time}</span>;
+}
+
 export default function About() {
   const [showTech, setShowTech] = useState(false);
   const [showCerts, setShowCerts] = useState(false);
 
-  // Base classes for all cards to remove border and add a default subtle shadow
-  const cardBaseClass = "bg-zinc-900/50 p-8 rounded-3xl transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.3)]";
+  // Common Styles
+  const cardBaseClass = "bg-[#0A0A0A] border border-zinc-800 p-8 rounded-3xl transition-all duration-500 shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] relative overflow-hidden group";
+  const iconBoxClass = "p-3 bg-zinc-900/50 w-fit rounded-xl border border-zinc-800 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] text-zinc-400 group-hover:text-white group-hover:border-zinc-600 transition-colors";
 
   return (
     <section id="about" className="relative w-full py-24 bg-[#0D0D0D] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="mb-16 text-center md:text-left">
-          <h2 className="font-SpaceGrotesk-VariableFont_wght text-4xl md:text-5xl font-bold mb-4 mt-10">
-            About Me
-          </h2>
-          <div className="h-1 w-20 bg-zinc-800 rounded-full mx-auto md:mx-0" />
+        {/* Header */}
+        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="text-center md:text-left">
+            <h2 className="font-SpaceGrotesk-VariableFont_wght text-4xl md:text-5xl font-bold mb-4 mt-10">
+              System Overview
+            </h2>
+            <div className="h-1 w-20 bg-green-500/50 rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+          </div>
+          <div className="flex items-center gap-4 bg-zinc-900/50 border border-zinc-800 px-4 py-2 rounded-full self-center md:self-auto">
+            <div className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </div>
+            <div className="text-xs font-SpaceMono-Regular text-zinc-400">
+              OPERATIONAL <span className="text-zinc-600 mx-2">|</span> <LiveClock /> PH
+            </div>
+          </div>
         </div>
 
-        {/* BENTO GRID LAYOUT */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* --- MAIN GRID LAYOUT --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
-          {/* --- TOP ROW --- */}
-
-          {/* Card 1: Main Bio (White Glow) */}
-          <div className={`md:col-span-2 ${cardBaseClass}`}>
-            <div className="flex flex-col h-full justify-between">
-              <div className="space-y-4">
-                <div className="p-3 bg-white/5 w-fit rounded-xl border border-white/10">
-                  <Code className="text-white" size={24} />
-                </div>
-                <h3 className="font-SpaceGrotesk-VariableFont_wght text-2xl font-bold">The intersection of Logic & Creativity.</h3>
-                <p className="font-SpaceMono-Regular text-zinc-400 leading-relaxed">
-                  I am a web designer and developer based in Davao, focusing on building digital experiences that look good and work even better.
-                  <br /><br />
-                  My work is driven by a desire to create pixel-perfect, accessible, and performant interfaces. I don't just write code; I craft solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Profile Picture (Blue Glow) */}
-          <div className={`relative h-64 md:h-auto rounded-3xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-500`}>
-             <div className="absolute inset-0 bg-zinc-900 flex items-center justify-center">
-                <span className="font-SpaceMono-Regular text-zinc-600"></span>
-             </div>
-             <Image 
-               src="/personal-photo.png" 
-               alt="Carl" 
-               fill 
-               className="object-cover grayscale hover:grayscale-0 transition-all duration-500" 
-             />
-          </div>
-
-          {/* --- BOTTOM ROW --- */}
-
-          {/* Box 1: Tech Stack (Orange Glow) */}
-          <div 
-            onClick={() => setShowTech(!showTech)}
-            className={`relative cursor-pointer group overflow-hidden h-64 ${cardBaseClass} hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]`}
-          >
-            {/* View 1: Default (Hidden) */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${showTech ? "opacity-0 invisible" : "opacity-100 visible"}`}>
-              <div className="p-4 bg-white/5 rounded-full border border-white/10 mb-4 group-hover:scale-110 transition-transform">
-                <Layers className="text-white" size={32} />
-              </div>
-              <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold mb-2">My Arsenal</h3>
-              <p className="font-SpaceMono-Regular text-xs text-zinc-500 uppercase tracking-widest">Tap to reveal</p>
-            </div>
-
-            {/* View 2: Revealed List */}
-            <div className={`absolute inset-0 p-8 flex flex-col transition-opacity duration-300 ${showTech ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-              <div className="flex justify-between items-start mb-4">
-                 <h3 className="font-SpaceGrotesk-VariableFont_wght text-lg font-bold text-zinc-300">Tech Stack</h3>
-                 <ArrowUpRight size={16} className="text-zinc-500" />
-              </div>
-              
-              <TechStackList /> 
-              
-            </div>
-          </div>
-
-          {/* Box 2: Certificates (Green Glow) */}
-          <div 
-            onClick={() => setShowCerts(true)} 
-            className={`relative cursor-pointer group overflow-hidden h-64 ${cardBaseClass} hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]`}
-          >
-             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="p-4 bg-white/5 rounded-full border border-white/10 mb-4 group-hover:scale-110 transition-transform">
-                  <Award className="text-white" size={32} />
-                </div>
-                <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold mb-2">Certificates</h3>
-                <p className="font-SpaceMono-Regular text-xs text-zinc-500 uppercase tracking-widest">View All</p>
-             </div>
-          </div>
-
-          {/* Box 3: Social Media (Purple Glow) */}
-          <div className={`h-64 flex flex-col items-center justify-center gap-6 ${cardBaseClass} hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]`}>
-            <div className="text-center">
-              <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold mb-1">Connect</h3>
-              <p className="font-SpaceMono-Regular text-xs text-zinc-500">Let's build something together.</p>
-            </div>
+          {/* === LEFT COLUMN (Bio, Tech, Certs) === */}
+          <div className="lg:col-span-2 flex flex-col gap-6">
             
-            <div className="flex gap-4">
-               <a href="#" className="p-4 bg-zinc-800 rounded-2xl border border-zinc-700 hover:bg-white hover:text-black transition-all group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                 <Facebook size={24} />
-               </a>
-               <a href="#" className="p-4 bg-zinc-800 rounded-2xl border border-zinc-700 hover:bg-white hover:text-black transition-all group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                 <Github size={24} />
-               </a>
-               <a href="#" className="p-4 bg-zinc-800 rounded-2xl border border-zinc-700 hover:bg-white hover:text-black transition-all group hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                 <Instagram size={24} />
-               </a>
+            {/* Widget 1: Main Bio */}
+            <div className={`min-h-[300px] ${cardBaseClass}`}>
+              <div className="flex flex-col h-full justify-between z-10 relative">
+                <div className="space-y-6">
+                  <div className="flex justify-between items-start">
+                     <div className={iconBoxClass}>
+                       <Code size={24} />
+                     </div>
+                     <span className="text-[10px] font-SpaceMono-Regular text-zinc-600 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">Bio.exe running</span>
+                  </div>
+                  <div>
+                    <h3 className="font-SpaceGrotesk-VariableFont_wght text-2xl font-bold mb-2">
+                      Logic <span className="text-zinc-600">&</span> Creativity
+                    </h3>
+                    <p className="font-SpaceMono-Regular text-zinc-400 leading-relaxed text-sm md:text-base">
+                      <span className="text-green-500 mr-2">&gt;</span>
+                      Initiating developer sequence...
+                      <br/><br/>
+                      I am a web designer and developer based in Davao. My core function is building digital experiences that prioritize performance, accessibility, and precision.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 pointer-events-none" />
+            </div>
+
+            {/* Inner Grid for Tech & Certs */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Widget 3: Tech Stack */}
+                <div 
+                  onClick={() => setShowTech(!showTech)}
+                  className={`relative cursor-pointer h-64 ${cardBaseClass}`}
+                >
+                  <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${showTech ? "opacity-0 invisible" : "opacity-100 visible"}`}>
+                    <div className={`${iconBoxClass} mb-4 relative`}>
+                      <Cpu size={32} />
+                      <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                      </span>
+                    </div>
+                    <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold mb-1">Tech Arsenal</h3>
+                    <p className="font-SpaceMono-Regular text-[10px] text-zinc-500 uppercase tracking-widest">
+                      System Status: Optimized
+                    </p>
+                  </div>
+                  <div className={`absolute inset-0 p-6 flex flex-col transition-opacity duration-300 ${showTech ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+                    <div className="flex justify-between items-start mb-4 border-b border-zinc-800 pb-2">
+                      <h3 className="font-SpaceGrotesk-VariableFont_wght text-lg font-bold text-zinc-300">Modules Loaded</h3>
+                      <ArrowUpRight size={16} className="text-zinc-500"/>
+                    </div>
+                    <TechStackList /> 
+                  </div>
+                </div>
+
+                {/* Widget 4: Certificates */}
+                <div 
+                  onClick={() => setShowCerts(true)} 
+                  className={`relative cursor-pointer h-64 ${cardBaseClass}`}
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <div className={`${iconBoxClass} mb-4`}>
+                        <Award size={32} />
+                      </div>
+                      <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold mb-2">Credentials</h3>
+                      <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/20 border border-green-900/50">
+                        <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <span className="font-SpaceMono-Regular text-[10px] text-green-400 uppercase tracking-widest">Verified</span>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          {/* === RIGHT COLUMN (THE ID CARD) === */}
+          <div className="lg:col-span-1 h-full">
+            <div className={`h-full flex flex-col ${cardBaseClass} p-0`}> {/* p-0 removes padding to let image fill edge */}
+              
+              {/* Top Half: Profile Photo (Expanded) */}
+              <div className="relative flex-1 min-h-[300px] w-full overflow-hidden bg-zinc-900 group border-b border-zinc-800">
+                <Image 
+                  src="/personal-photo.png" 
+                  alt="Carl" 
+                  fill 
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80 group-hover:opacity-100" 
+                />
+                
+                {/* ID Card Overlay Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-4 left-4 p-1 border border-white/20 rounded bg-black/20 backdrop-blur-sm">
+                      <ScanLine size={16} className="text-white/70" />
+                    </div>
+                    {/* ID Badge Number */}
+                    <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md border border-white/10">
+                       <span className="font-SpaceMono-Regular text-[10px] text-zinc-300">ID: DEV-001</span>
+                    </div>
+                    <div className="absolute top-0 left-0 w-full h-1 bg-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.5)] animate-[scan_3s_ease-in-out_infinite]" />
+                </div>
+              </div>
+
+              {/* Bottom Half: Connect (Merged) */}
+              <div className="p-8 flex flex-col items-center justify-center gap-6 bg-[#0A0A0A]">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2 text-zinc-500">
+                    <Radio size={16} className="animate-pulse" />
+                    <span className="font-SpaceMono-Regular text-xs uppercase tracking-widest">Uplink Ready</span>
+                  </div>
+                  <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold">Initialize Connection</h3>
+                </div>
+                
+                <div className="flex gap-4">
+                  <a href="#" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-[-2px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
+                    <Facebook size={20} />
+                  </a>
+                  <a href="#" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-[-2px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
+                    <Github size={20} />
+                  </a>
+                  <a href="#" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-[-2px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
+                    <Instagram size={20} />
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -129,7 +201,7 @@ export default function About() {
       <Modal 
         isOpen={showCerts} 
         onClose={() => setShowCerts(false)}
-        title="My Certifications"
+        title="Verified Credentials"
       >
         <CertificatesList />
       </Modal>

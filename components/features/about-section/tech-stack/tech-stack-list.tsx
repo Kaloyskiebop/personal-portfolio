@@ -3,57 +3,30 @@ import Image from "next/image";
 
 export default function TechStackList() {
   const technologies = [
-    {
-      name: "HTML5",
-      icon: "/logos/html-logo.svg",
-      className: "grayscale group-hover:grayscale-0", 
-    },
-    {
-      name: "CSS3",
-      icon: "/logos/css-logo.svg",
-      className: "grayscale group-hover:grayscale-0",
-    },
-    {
-      name: "JavaScript",
-      icon: "/logos/javascript-logo.svg",
-      className: "grayscale group-hover:grayscale-0",
-    },
-    {
-      name: "Java",
-      icon: "/logos/java-logo.svg",
-      className: "grayscale group-hover:grayscale-0",
-    },
-    {
-      name: "C++",
-      icon: "/logos/cpp-logo.svg",
-      className: "grayscale group-hover:grayscale-0",
-    },
-    {
-      name: "Tailwind",
-      icon: "/logos/tailwindcss-logo.svg",
-      className: "grayscale group-hover:grayscale-0",
-    },
+    { name: "HTML5", icon: "/logos/html-logo.svg" },
+    { name: "CSS3", icon: "/logos/css-logo.svg" },
+    { name: "JavaScript", icon: "/logos/javascript-logo.svg" },
+    { name: "Java", icon: "/logos/java-logo.svg" },
+    { name: "C++", icon: "/logos/cpp-logo.svg" },
+    { name: "Tailwind", icon: "/logos/tailwindcss-logo.svg" },
   ];
 
   return (
-    <div className="flex flex-wrap gap-4 overflow-y-auto scrollbar-hide p-1">
-      {technologies.map((tech) => (
+    <div className="flex flex-wrap gap-4 overflow-y-auto scrollbar-hide p-2">
+      {technologies.map((tech, index) => (
         <div 
           key={tech.name} 
-          // UPDATED STYLES:
-          // border-transparent: Hides border by default
-          // hover:bg-zinc-800/50: Adds subtle background ONLY on hover
-          // hover:border-zinc-700: Adds border ONLY on hover
-          className="group flex flex-col items-center justify-center p-3 rounded-xl border border-transparent hover:border-zinc-700 hover:bg-zinc-800/50 transition-all duration-300 hover:scale-110"
+          className="flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-800 bg-zinc-900/20 animate-float"
           title={tech.name}
+          // Stagger the animation so they don't all move at once
+          style={{ animationDelay: `${index * 0.2}s` }}
         >
-          {/* Container for Next.js Image */}
-          <div className="relative w-8 h-8 transition-colors">
+          <div className="relative w-8 h-8">
             <Image 
                 src={tech.icon}
                 alt={tech.name}
                 fill
-                className={`object-contain transition-all duration-300 ${tech.className}`}
+                className="object-contain"
             />
           </div>
         </div>
