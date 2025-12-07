@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Code, Layers, ArrowUpRight, Award, Github, Instagram, Facebook, Radio, Cpu, ScanLine } from "lucide-react";
 import Image from "next/image";
-import Modal from "@/components/ui/modal/about-modal-content"; 
+import Modal from "@/components/ui/modal/modal"; 
 import CertificatesList from "./certificates/certificates-list"; 
 import TechStackList from "./tech-stack/tech-stack-list"; 
 

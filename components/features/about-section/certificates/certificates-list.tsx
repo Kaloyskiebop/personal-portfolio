@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Award, Calendar, ExternalLink, Maximize2 } from "lucide-react";
 import Image from "next/image";
 // Using the same Modal component you already have
-import Modal from "@/components/ui/modal/about-modal-content"; 
+import Modal from "@/components/ui/modal/modal"; //
 
 export default function CertificatesList() {
   // State to track which image is currently zoomed (null = none)

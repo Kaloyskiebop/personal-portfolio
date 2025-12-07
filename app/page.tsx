@@ -10,7 +10,7 @@ export default function Home() {
       <section id="home"><Hero/></section>
       <section id="about"><About/></section>
       <section id="journal"><Journal/></section>
-      <section id="contacts"><Contacts/></section>
+      {/* <section id="contacts"><Contacts/></section> */}
       {/* You can add <About /> or <Projects /> here later */}
     </main>
   );
