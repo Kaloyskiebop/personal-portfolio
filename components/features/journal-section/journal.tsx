@@ -37,20 +37,7 @@ export default function Journal() {
   const activeData = timelineData.find((item) => item.year === selectedYear);
 
   return (
-    <section id="journal" className="relative w-full pt-30 bg-[#0D0D0D] text-white min-h-screen">
-      
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/hero-banner.svg" 
-          alt="Hero Banner"
-          fill
-          className="object-cover opacity-20" 
-          priority
-          quality={100}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-transparent to-[#0D0D0D]" />
-      </div>
+    <section id="journal" className="relative w-full pt-30 bg-linear-to-b from-[#0D0D0D] to-[#0E0E0E] text-white min-h-screen">
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -64,7 +51,7 @@ export default function Journal() {
 
         {/* --- VERTICAL TIMELINE --- */}
         <div className="relative ml-4 md:ml-12 pb-12">
-          <div className="absolute left-0 top-2 bottom-0 w-[2px] bg-zinc-800" />
+          <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-zinc-800" />
 
           {timelineData.map((item) => {
             const future = isFuture(item.year);

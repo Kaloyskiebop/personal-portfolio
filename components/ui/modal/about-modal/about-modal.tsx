@@ -1,6 +1,6 @@
 "use client";
 
-import GenericModal from "./modal";
+import GenericModal from "../modal";
 import AboutModalContent from "./about-modal-content";
 
 interface AboutModalProps {

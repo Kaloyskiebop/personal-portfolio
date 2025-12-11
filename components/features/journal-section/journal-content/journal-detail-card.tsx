@@ -5,7 +5,7 @@ import { ArrowRight, Lock, Ticket, MapPin, BookOpen, Sparkles, Image as ImageIco
 import Image from "next/image";
 import ImageCarousel from "@/components/ui/carousel/image-carousel"; 
 import Modal from "@/components/ui/modal/modal"; 
-import JournalModalContent from "@/components/ui/modal/journal-modal-content"; 
+import JournalModalContent from "@/components/ui/modal/journal-modal/journal-modal-content"; 
 
 // Define simple types for props
 interface JournalDetailCardProps {

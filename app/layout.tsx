@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
+      <body
         className={`
           ${spaceGrotesk.className} 
           ${spaceMono.variable} 
@@ -60,7 +60,7 @@ export default function RootLayout({
           antialiased 
           text-white
         `}
-      >
+    >
         <Navbar />
         {children}
       </body>

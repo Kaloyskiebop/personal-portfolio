@@ -1,6 +1,6 @@
 "use client";
 
-import GenericModal from "./modal";
+import GenericModal from "../modal";
 import JournalModalContent from "./journal-modal-content";
 
 interface JournalModalProps {
