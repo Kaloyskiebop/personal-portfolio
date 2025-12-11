@@ -9,7 +9,7 @@ export const timelineData = [
       "/learnings/2023/figma2-2023.png",
       "/learnings/2023/flowchart.png",
     ],
-    preview: "Enrolled as a 1st-year student. Laid the logic foundations with C++ and started building my first web pages.",
+    preview: "Enrolled as a 1st-year student. Laid the logic foundations with C++ and started exploring on designing web pages.",
     description: "In 2023, I took my first steps into the world of programming. Starting with C++, I learned the fundamentals of logic, data structures, and algorithms. At the same time, I began exploring web designing, creating simple layouts and experimenting with visual styles which eventually sparked my passion for frontend engineering."
   },
   { 
@@ -21,7 +21,7 @@ export const timelineData = [
       "/learnings/2024/android1-2024.png",
       "/learnings/2024/netbeans-2024.png",
     ],
-    preview: "Navigated the vast tech ecosystem. Experimented with different frameworks to define my path in frontend engineering.",
+    preview: "Explored new tools in 2024 from Java and Android Studio to sharpening my HTML/CSS all shaping my direction in frontend development.",
     description: "2024 was a year of exploration. I shifted my focus to Java and Android Studio, where I started designing mobile apps and understanding how real applications work behind the scenes. I also strengthened my fundamentals in HTML and CSS, building a more solid foundation for my journey into frontend engineering."
   },
   { 
