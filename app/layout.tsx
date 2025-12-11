@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local"; 
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 
 // 1. Load Space Grotesk (Variable Font)
 // This handles all weights (Bold, Light, Regular) automatically
@@ -63,6 +64,7 @@ export default function RootLayout({
     >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
