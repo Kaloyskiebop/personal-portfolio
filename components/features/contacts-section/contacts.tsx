@@ -20,9 +20,9 @@ export default function Contacts() {
   };
 
   const socialLinks = [
-    { name: "LinkedIn", href: "https://linkedin.com/in/yourusername", label: "/in/yourusername" },
-    { name: "GitHub", href: "https://github.com/yourusername", label: "@yourusername" },
-    { name: "Instagram", href: "https://instagram.com/yourusername", label: "@yourusername" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/john-carl-imarga-9016a4398/", label: "/in/john-carl-imarga-9016a4398" },
+    { name: "GitHub", href: "https://github.com/Kaloyskiebop", label: "@Kaloyskiebop" },
+    { name: "Facebook", href: "https://web.facebook.com/carl.john.660860", label: "@carl.john.660860" },
   ];
 
   return (
