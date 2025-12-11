@@ -4,25 +4,29 @@
 
 export const locationGalleries: Record<string, string[]> = {
   "pldt-site": [
-    "/events/educational-tour/educ-tour-lunch.jpg",
-    "/events/educational-tour/educ-tour-lunch.jpg",
-    "/events/educational-tour/educ-tour-lunch.jpg",
+    "/events/educational-tour/pldt/pldt1.jpg",
+    "/events/educational-tour/pldt/pldt2.jpg",
+    "/events/educational-tour/pldt/pldt3.jpg",
   ],
   "vitro-data-center": [
     "/events/educational-tour/vitro/security.jpg",
     "/events/educational-tour/vitro/cooling-system.jpg",
   ],
   "vikings-buffet": [
-    "/events/educational-tour/vikings/group-photo.jpg",
-    "/events/educational-tour/vikings/food.jpg",
+    "/events/educational-tour/vikings/vikings1.jpg",
+    "/events/educational-tour/vikings/vikings2.jpg",
   ],
   "jairosoft-inc": [
-    "/events/educational-tour/jairosoft/office.jpg",
-    "/events/educational-tour/jairosoft/dev-team.jpg",
+    "/events/educational-tour/jairosoft/jairosoft1.jpg",
+    "/events/educational-tour/jairosoft/jairosoft2.jpg",
+    "/events/educational-tour/jairosoft/jairosoft3.jpg",
+    "/events/educational-tour/jairosoft/jairosoft4.jpg",
+    "/events/educational-tour/jairosoft/jairosoft5.jpg",
   ],
   "cdrrmo-office": [
-    "/events/educational-tour/cdrrmo/command-center.jpg",
-    "/events/educational-tour/cdrrmo/monitoring-screens.jpg",
+    "/events/educational-tour/cdrrmo/cdrrmo1.jpg",
+    "/events/educational-tour/cdrrmo/cdrrmo2.jpg",
+    "/events/educational-tour/cdrrmo/cdrrmo3.jpg",
   ],
   
   // DevFest Galleries

@@ -30,14 +30,14 @@ export const eventSchedules: Record<string, ScheduleItem[]> = {
       locations: [
         {
           name: "PLDT Inc.",
-          image: "/hero-banner.png", 
+          image: "/events/educational-tour/pldt/pldt-image.jpg", 
           note: "Observed network operations center and learned about fiber optic infrastructure management.",
           observation: "/observations/pldt-notes.jpg",
           galleryId: "pldt-site"
         },
         {
           name: "Vitro Data Center",
-          image: "/hero-banner.png", 
+          image: "/events/educational-tour/vitro/vitro-image.png", 
           note: "Toured the state-of-the-art server facilities, focusing on rack management, cooling systems, and physical security protocols.",
           observation: "/observations/vitro-notes.jpg",
           galleryId: "vitro-data-center"
@@ -53,7 +53,7 @@ export const eventSchedules: Record<string, ScheduleItem[]> = {
       locations: [
         {
           name: "Vikings Buffet",
-          image: "/hero-banner.png", 
+          image: "/events/educational-tour/vikings/vikings-image.jpg", 
           note: "Enjoyed a hearty meal while discussing industry trends with fellow developers."
         }
       ]
@@ -67,14 +67,14 @@ export const eventSchedules: Record<string, ScheduleItem[]> = {
       locations: [
         {
           name: "Jairosoft Inc.",
-          image: "/hero-banner.png", 
+          image: "/events/educational-tour/jairosoft/jairosoft-image.jpg", 
           note: "Gained insight into agile software development workflows and client management.",
           observation: "/observations/jairosoft-notes.jpg",
           galleryId: "jairosoft-inc"
         },
         {
           name: "CDRRMO Office",
-          image: "/hero-banner.png", 
+          image: "/events/educational-tour/cdrrmo/cdrrmo-image.jpg", 
           note: "Observed how technology is utilized in disaster risk reduction and management.",
           observation: "/observations/cdrrmo-notes.jpg",
           galleryId: "cdrrmo-office"
