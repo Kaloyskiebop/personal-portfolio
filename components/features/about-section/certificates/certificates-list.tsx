@@ -12,6 +12,14 @@ export default function CertificatesList() {
 
   const certificates = [
     {
+      title: "Davao Educational Tour",
+      issuer: "World of Adventures Travel and Tours",
+      date: "2025",
+      image: "/certificates/educ-cert.jpg", 
+      description: "Participated in an educational tour visiting top tech companies and data centers in Davao City.",
+      link: "#"
+    },
+    {
       title: "Operating Systems Basics",
       issuer: "Cisco Networking Academy",
       date: "2025",

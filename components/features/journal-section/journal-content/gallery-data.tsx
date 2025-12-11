@@ -7,10 +7,13 @@ export const locationGalleries: Record<string, string[]> = {
     "/events/educational-tour/pldt/pldt1.jpg",
     "/events/educational-tour/pldt/pldt2.jpg",
     "/events/educational-tour/pldt/pldt3.jpg",
+    "/events/educational-tour/pldt/pldt4.jpg",
+    "/events/educational-tour/pldt/pldt5.jpg",
   ],
   "vitro-data-center": [
-    "/events/educational-tour/vitro/security.jpg",
-    "/events/educational-tour/vitro/cooling-system.jpg",
+    "/events/educational-tour/vitro/vitro3.jpg",
+    "/events/educational-tour/vitro/vitro3.jpg",
+    "/events/educational-tour/vitro/vitro3.jpg",
   ],
   "vikings-buffet": [
     "/events/educational-tour/vikings/vikings1.jpg",

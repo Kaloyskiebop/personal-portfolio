@@ -32,14 +32,14 @@ export const eventSchedules: Record<string, ScheduleItem[]> = {
           name: "PLDT Inc.",
           image: "/events/educational-tour/pldt/pldt-image.jpg", 
           note: "Observed network operations center and learned about fiber optic infrastructure management.",
-          observation: "/observations/pldt-notes.jpg",
+          observation: "/events/educational-tour/pldt/pldt-observation.jpg",
           galleryId: "pldt-site"
         },
         {
           name: "Vitro Data Center",
           image: "/events/educational-tour/vitro/vitro-image.png", 
           note: "Toured the state-of-the-art server facilities, focusing on rack management, cooling systems, and physical security protocols.",
-          observation: "/observations/vitro-notes.jpg",
+          observation: "/events/educational-tour/vitro/vitro-observation.jpg",
           galleryId: "vitro-data-center"
         }
       ]
@@ -70,14 +70,14 @@ export const eventSchedules: Record<string, ScheduleItem[]> = {
           name: "Jairosoft Inc.",
           image: "/events/educational-tour/jairosoft/jairosoft-image.jpg", 
           note: "Gained insight into agile software development workflows and client management.",
-          observation: "/observations/jairosoft-notes.jpg",
+          observation: "/events/educational-tour/jairosoft/jairosoft-observation.jpg",
           galleryId: "jairosoft-inc"
         },
         {
           name: "CDRRMO Office",
           image: "/events/educational-tour/cdrrmo/cdrrmo-image.jpg", 
           note: "Observed how technology is utilized in disaster risk reduction and management.",
-          observation: "/observations/cdrrmo-notes.jpg",
+          observation: "/events/educational-tour/cdrrmo/cdrrmo-observation.jpg",
           galleryId: "cdrrmo-office"
         }
       ]
