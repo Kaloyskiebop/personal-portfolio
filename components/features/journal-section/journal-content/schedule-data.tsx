@@ -46,15 +46,16 @@ export const eventSchedules: Record<string, ScheduleItem[]> = {
     },
     {
       period: "Lunch",
-      title: "Networking Lunch",
+      title: "Lunch",
       icon: <Utensils size={20} />,
       color: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-      description: "Buffet lunch at Vikings, providing an opportunity to network with peers and mentors.",
+      description: "Buffet lunch at Vikings, just enjoying good food and having fun with classmates.",
       locations: [
         {
           name: "Vikings Buffet",
           image: "/events/educational-tour/vikings/vikings-image.jpg", 
-          note: "Enjoyed a hearty meal while discussing industry trends with fellow developers."
+          note: "Enjoyed a hearty meal while discussing with fellow students.",
+          galleryId: "vikings-buffet"
         }
       ]
     },

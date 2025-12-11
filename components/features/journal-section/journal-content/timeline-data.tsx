@@ -3,17 +3,26 @@ export const timelineData = [
     year: "2023", 
     title: "Initialization",
     image: "/learnings/cpp2023.png", 
-    gallery: ["/learnings/cpp2023.png"],
+    gallery: [
+      "/learnings/2023/cpp2023.png",
+      "/learnings/2023/figma1-2023.png",
+      "/learnings/2023/figma2-2023.png",
+      "/learnings/2023/flowchart.png",
+    ],
     preview: "Enrolled as a 1st-year student. Laid the logic foundations with C++ and started building my first web pages.",
-    description: "In 2023, I took my first steps into the world of programming. Starting with C++, I learned the fundamentals of logic, data structures, and algorithms. Simultaneously, I began exploring web development, building static pages with HTML and CSS, which sparked my passion for frontend engineering."
+    description: "In 2023, I took my first steps into the world of programming. Starting with C++, I learned the fundamentals of logic, data structures, and algorithms. At the same time, I began exploring web designing, creating simple layouts and experimenting with visual styles which eventually sparked my passion for frontend engineering."
   },
   { 
     year: "2024", 
     title: "Discovery",
     image: "/hero-banner.png", 
-    gallery: ["/hero-banner.png"],
+    gallery: [
+      "/learnings/2024/java-2024.png",
+      "/learnings/2024/android1-2024.png",
+      "/learnings/2024/netbeans-2024.png",
+    ],
     preview: "Navigated the vast tech ecosystem. Experimented with different frameworks to define my path in frontend engineering.",
-    description: "2024 was a year of exploration. I moved beyond static sites and started working with JavaScript frameworks. I experimented with React and discovered the power of component-based architecture. This year defined my path towards becoming a specialized Frontend Engineer."
+    description: "2024 was a year of exploration. I shifted my focus to Java and Android Studio, where I started designing mobile apps and understanding how real applications work behind the scenes. I also strengthened my fundamentals in HTML and CSS, building a more solid foundation for my journey into frontend engineering."
   },
   { 
     year: "2025", 

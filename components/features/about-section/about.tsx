@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Code, Layers, ArrowUpRight, Award, Github, Instagram, Facebook, Radio, Cpu, ScanLine } from "lucide-react";
+import { Code, Layers, ArrowUpRight, Award, Github, Instagram, Facebook, Radio, Cpu, ScanLine, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Modal from "@/components/ui/modal/modal"; 
 import CertificatesList from "./certificates/certificates-list"; 
@@ -180,14 +180,14 @@ export default function About() {
                 </div>
                 
                 <div className="flex gap-4">
-                  <a href="#" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
+                  <a href="https://web.facebook.com/carl.john.660860" target="_blank" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
                     <Facebook size={20} />
                   </a>
-                  <a href="#" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
+                  <a href="https://github.com/Kaloyskiebop" target="_blank" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
                     <Github size={20} />
                   </a>
-                  <a href="#" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
-                    <Instagram size={20} />
+                  <a href="https://www.linkedin.com/in/john-carl-imarga-9016a4398/" target="_blank" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
+                    <Linkedin size={20} />
                   </a>
                 </div>
               </div>

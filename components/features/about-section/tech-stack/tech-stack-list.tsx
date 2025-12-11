@@ -9,6 +9,7 @@ export default function TechStackList() {
     { name: "Java", icon: "/logos/java-logo.svg" },
     { name: "C++", icon: "/logos/cpp-logo.svg" },
     { name: "Tailwind", icon: "/logos/tailwindcss-logo.svg" },
+    { name: "Figma", icon: "/logos/figma-logo.svg" },
   ];
 
   return (

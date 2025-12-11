@@ -50,7 +50,7 @@ export default function JournalModalContent({ data }: JournalModalContentProps) 
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/60 to-transparent flex flex-col justify-end p-8">
+          <div className="absolute inset-0 bg-linear-to-t from-[#0D0D0D] via-[#0D0D0D]/60 to-transparent flex flex-col justify-end p-8">
              <h2 className="text-4xl font-bold font-SpaceGrotesk-VariableFont_wght text-white mb-3">
                {data.title}
              </h2>
