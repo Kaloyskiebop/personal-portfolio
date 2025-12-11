@@ -43,7 +43,7 @@ export default function Journal() {
         
         {/* Header */}
         <div className="mb-16 text-left pl-4 md:pl-0">
-          <h2 className="font-SpaceGrotesk-VariableFont_wght text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-SpaceGrotesk-VariableFont_wght text-4xl md:text-6xl font-bold mb-4">
             My Journey So Far
           </h2>
           <div className="h-1 w-20 bg-blue-500/50 rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(34,197,94,0.5)]"/>

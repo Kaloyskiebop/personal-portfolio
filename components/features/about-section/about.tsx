@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Code, Layers, ArrowUpRight, Award, Github, Instagram, Facebook, Radio, Cpu, ScanLine, Linkedin } from "lucide-react";
+import { Code, Layers, ArrowUpRight, Award, Radio, Cpu, ScanLine, Terminal, Activity } from "lucide-react"; // Removed social icons
 import Image from "next/image";
 import Modal from "@/components/ui/modal/modal"; 
 import CertificatesList from "./certificates/certificates-list"; 
@@ -47,7 +47,7 @@ export default function About() {
         {/* Header */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="text-center md:text-left">
-            <h2 className="font-SpaceGrotesk-VariableFont_wght text-4xl md:text-5xl font-bold mb-4 mt-10">
+            <h2 className="font-SpaceGrotesk-VariableFont_wght text-4xl md:text-6xl font-bold mb-4 mt-10">
               System Overview
             </h2>
             <div className="h-1 w-20 bg-green-500/50 rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
@@ -118,7 +118,7 @@ export default function About() {
                   <div className={`absolute inset-0 p-6 flex flex-col transition-opacity duration-300 ${showTech ? "opacity-100 visible" : "opacity-0 invisible"}`}>
                     <div className="flex justify-between items-start mb-4 border-b border-zinc-800 pb-2">
                       <h3 className="font-SpaceGrotesk-VariableFont_wght text-lg font-bold text-zinc-300">Modules Loaded</h3>
-                      <ArrowUpRight size={16} className="text-zinc-500"/>
+                      <ArrowUpRight size={16} className="text-zinc-500" />
                     </div>
                     <TechStackList /> 
                   </div>
@@ -145,7 +145,7 @@ export default function About() {
 
           {/* === RIGHT COLUMN (THE ID CARD) === */}
           <div className="lg:col-span-1 h-full">
-            <div className={`h-full flex flex-col ${cardBaseClass} p-0`}> {/* p-0 removes padding to let image fill edge */}
+            <div className={`h-full flex flex-col ${cardBaseClass} p-0`}> 
               
               {/* Top Half: Profile Photo (Expanded) */}
               <div className="relative flex-1 min-h-[300px] w-full overflow-hidden bg-zinc-900 group border-b border-zinc-800">
@@ -169,26 +169,26 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Bottom Half: Connect (Merged) */}
+              {/* Bottom Half: Current Focus / Stats (REPLACED SOCIALS) */}
               <div className="p-8 flex flex-col items-center justify-center gap-6 bg-[#0A0A0A]">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2 mb-2 text-zinc-500">
-                    <Radio size={16} className="animate-pulse" />
-                    <span className="font-SpaceMono-Regular text-xs uppercase tracking-widest">Uplink Ready</span>
+                <div className="text-center w-full">
+                  <div className="flex items-center justify-center gap-2 mb-4 text-zinc-500">
+                    <Activity size={16} className="text-green-500" />
+                    <span className="font-SpaceMono-Regular text-xs uppercase tracking-widest">Current Focus</span>
                   </div>
-                  <h3 className="font-SpaceGrotesk-VariableFont_wght text-xl font-bold">Initialize Connection</h3>
-                </div>
-                
-                <div className="flex gap-4">
-                  <a href="https://web.facebook.com/carl.john.660860" target="_blank" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
-                    <Facebook size={20} />
-                  </a>
-                  <a href="https://github.com/Kaloyskiebop" target="_blank" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
-                    <Github size={20} />
-                  </a>
-                  <a href="https://www.linkedin.com/in/john-carl-imarga-9016a4398/" target="_blank" className="p-4 rounded-xl border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-600 hover:translate-y-0.5 hover:shadow-[0_5px_15px_rgba(0,0,0,0.5)] transition-all">
-                    <Linkedin size={20} />
-                  </a>
+                  
+                  {/* Status List */}
+                  <div className="space-y-3 w-full">
+                    <div className="flex items-center justify-between p-3 rounded-xl border border-zinc-800 bg-zinc-900/50">
+                      <span className="text-sm font-bold text-zinc-300">Web Designing</span>
+                      <span className="text-[10px] font-SpaceMono-Regular text-green-400 bg-green-900/20 px-2 py-1 rounded">Active</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-xl border border-zinc-800 bg-zinc-900/50">
+                      <span className="text-sm font-bold text-zinc-300">Frontend</span>
+                      <span className="text-[10px] font-SpaceMono-Regular text-yellow-400 bg-yellow-900/20 px-2 py-1 rounded">Learning</span>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
