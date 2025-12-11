@@ -56,7 +56,7 @@ export default function JournalModalContent({ data }: JournalModalContentProps) 
              </h2>
              <div className="flex items-center gap-6 text-zinc-300 text-base font-SpaceMono-Regular">
                <span className="flex items-center gap-2"><Calendar size={16} /> 2025</span>
-               <span className="flex items-center gap-2"><MapPin size={16} /> Event Location</span>
+               <span className="flex items-center gap-2"><MapPin size={16} /> Davao City</span>
              </div>
           </div>
         </div>
