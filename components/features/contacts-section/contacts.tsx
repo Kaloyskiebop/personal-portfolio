@@ -39,7 +39,7 @@ export default function Contacts() {
           quality={100}
         />
         {/* Gradient overlay to blend it into the dark background - BOTTOM ONLY */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#050505] to-transparent" />
       </div>
 
       {/* 3. Content Container (Added z-10 to sit on top of image) */}
@@ -63,7 +63,7 @@ export default function Contacts() {
               Send a Message
             </h3>
             
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-grow">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 grow">
               <div className="flex flex-col gap-2">
                 <label htmlFor="email" className="text-xs font-SpaceMono-Regular text-zinc-500 uppercase tracking-widest">Your Email</label>
                 <input 
@@ -75,7 +75,7 @@ export default function Contacts() {
                 />
               </div>
 
-              <div className="flex flex-col gap-2 flex-grow">
+              <div className="flex flex-col gap-2 grow">
                 <label htmlFor="message" className="text-xs font-SpaceMono-Regular text-zinc-500 uppercase tracking-widest">Message</label>
                 <textarea 
                   id="message"
